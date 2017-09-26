@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+
+<h:body>
+	<p:dataTable id="tbTerapias" var="terapia" value="#{dtSelectionView.cars5}"
+		selection="#{TerapiaBean.buscar}" rowKey="#{lista.id}">
+		<f:facet name="header">
+            Lista de Terapias Cadastradas
+        </f:facet>
+		<p:column selectionMode="single" style="width:16px;text-align:center" />
+		<p:column headerText="Id">
+			<h:outputText value="#{lista.Id}" />
+		</p:column>
+		<p:column headerText="Nome">
+			<h:outputText value="#{lista.Nome}" />
+		</p:column>
+		<p:column headerText="Origem">
+			<h:outputText value="#{lista.Origem}" />
+		</p:column>
+		<p:column headerText="Principio">
+			<h:outputText value="#{lista.Principio}" />
+		</p:column>
+		<p:column headerText="Substancia">
+			<h:outputText value="#{lista.Substancia}" />
+		</p:column>
+	<!-- <f:facet name="footer">
+			<p:commandButton process="radioDT" update=":form:carDetail"
+				icon="ui-icon-search" value="View"
+				oncomplete="PF('carDialog').show()" />
+		</f:facet> -->
+	</p:dataTable>
+
+</h:body>
+
+</html>
