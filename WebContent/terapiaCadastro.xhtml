@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+
+<h:body>
+
+	<h:form>
+		<h:panelGrid columns="2">
+			<h:outputLabel for="name" value="Name:" style="font-weight:bold" />
+			<h:inputText id="nome" value="#{TerapiaBean.terapia.setNome}" />
+
+			<h:outputLabel for="origem" value="Origem:" style="font-weight:bold" />
+			<h:inputText id="origem" value="#{TerapiaBean.terapia.setOrigem}" />
+
+			<h:outputLabel for="principio" value="Principio:" style="font-weight:bold" />
+			<h:inputText id="principio" value="#{TerapiaBean.terapia.setPrincipio}" />
+
+			<h:outputLabel for="substancia" value="Substancia:" style="font-weight:bold" />
+			<h:inputText id="substancia" value="#{TerapiaBean.terapia.setSubstancia}" />
+
+			<h:commandButton value="submit" action="#{TerapiaBean.salvar(TerapiaBean.terapia)}" icon="ui-icon-check" />
+			
+		</h:panelGrid>
+	</h:form>
+
+</h:body>
+
+</html>
+
+
+

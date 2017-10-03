@@ -7,27 +7,49 @@
 	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
 
 <h:body>
-	<p:dataTable id="tbTerapias" var="terapia" value="#{dtSelectionView.cars5}"
-		selection="#{TerapiaBean.buscar}" rowKey="#{lista.id}">
+<!-- 
+<p:dataTable var="terapia" value="#{TerapiaBean.buscar}">
+    <p:column headerText="Id">
+        <h:outputText value="#{terapia.getId}" />
+    </p:column>
+ 
+    <p:column headerText="Nome">
+        <h:outputText value="#{terapia.getNome}" />
+    </p:column>
+
+
+
+
+
+
+<p:dataTable id="checkboxDT" var="car" value="#{dtSelectionView.cars6}" 
+selection="#{dtSelectionView.selectedCars}" rowKey="#{car.id}" style="margin-bottom:0">
+
+	-->
+	
+	<p:dataTable id="tbTerapias" var="terapia" value="#{TerapiaBean.buscar}"
+		 rowKey="#{terapia.getId}" style="margin-bottom:0">
 		<f:facet name="header">
             Lista de Terapias Cadastradas
         </f:facet>
 		<p:column selectionMode="single" style="width:16px;text-align:center" />
 		<p:column headerText="Id">
-			<h:outputText value="#{lista.Id}" />
+			<h:outputText value="#{terapia.getId}" />
 		</p:column>
 		<p:column headerText="Nome">
-			<h:outputText value="#{lista.Nome}" />
+			<h:outputText value="#{terapia.getNome}" />
 		</p:column>
 		<p:column headerText="Origem">
-			<h:outputText value="#{lista.Origem}" />
+			<h:outputText value="#{terapia.getOrigem}" />
 		</p:column>
 		<p:column headerText="Principio">
-			<h:outputText value="#{lista.Principio}" />
+			<h:outputText value="#{terapia.getPrincipio}" />
 		</p:column>
 		<p:column headerText="Substancia">
-			<h:outputText value="#{lista.Substancia}" />
+			<h:outputText value="#{terapia.getSubstancia}" />
 		</p:column>
+		
+		
 	<!-- <f:facet name="footer">
 			<p:commandButton process="radioDT" update=":form:carDetail"
 				icon="ui-icon-search" value="View"

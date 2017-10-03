@@ -1,29 +1,31 @@
 package br.com.toth.bean;
+
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 
-import br.com.toth.dao.TerapiaDao;
-import br.com.toth.model.Terapia;
+import consoleToth.dao.*;
+import consoleToth.model.*;
 
 @ManagedBean
+@ViewScoped
 public class TerapiaBean {
 	
 
+	// ELEMENTOS
 	private Terapia terapia = new Terapia();
-	private List<Terapia> lista = new ArrayList<Terapia>();
-
-	public Terapia getTerapia() {
-		return terapia;
+	
+	//METODOS
+	public void salvar(Terapia _terapia) {
+		TerapiaDao dao = new TerapiaDao();
+		dao.salva(_terapia);
+		
 	}
 	
-	
     public List<Terapia> buscar() {
-        
-        Terapia _terapia = new Terapia();
         TerapiaDao dao = new TerapiaDao();       
-        return lista = dao.buscar(_terapia, 0);
+        return dao.buscar(new Terapia(), 0);
     }
-
+    
 }
